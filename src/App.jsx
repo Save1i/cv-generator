@@ -1,8 +1,17 @@
-import "./App.css";
-import { CvEditor } from "./components/cvEditor.jsx";
+import { CvEditor } from "./components/editor/CvEditor1.jsx"; // Adjust as necessary
+import { Preview } from "./components/preview/Preview.jsx";
+import { NameProvider } from "./components/editor/LineContext.jsx"; // Import NameProvider
+import styles from "./App.module.css";
 
 function App() {
-  return <CvEditor />;
+  return (
+    <div className={styles.app}>
+      <NameProvider>
+        <CvEditor />
+        <Preview />
+      </NameProvider>
+    </div>
+  );
 }
 
 export default App;

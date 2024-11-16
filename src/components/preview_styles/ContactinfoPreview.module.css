@@ -1,0 +1,6 @@
+.preview-area__basic-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 12px;
+}

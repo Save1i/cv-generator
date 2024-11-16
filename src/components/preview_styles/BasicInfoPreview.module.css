@@ -1,0 +1,17 @@
+.preview-area__basic-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header {
+  font-size: 24px;
+}
+
+.professional__title {
+  font-size: 20px;
+}
+
+.self-summary {
+  font-size: 12px;
+}

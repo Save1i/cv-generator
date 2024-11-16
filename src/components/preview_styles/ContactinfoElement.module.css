@@ -1,0 +1,9 @@
+.contact__element {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact__text {
+  font-size: 12px;
+}

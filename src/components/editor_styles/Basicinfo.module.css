@@ -1,0 +1,43 @@
+.form__basic-info {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.form__title {
+  font-size: 26px;
+  border-bottom: 3px solid #94a3b8;
+  padding-bottom: 6px;
+}
+
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+
+.label__btn {
+  background-color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: 2px solid #94a3b8;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.label__btn:hover {
+  border: 2px solid #a855f7;
+}
+
+.label__btn:active {
+  background-color: #e0e7ff;
+  border: 2px solid #a855f7;
+}
