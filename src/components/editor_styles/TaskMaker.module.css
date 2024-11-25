@@ -1,0 +1,89 @@
+.task-maker {
+}
+
+.task-maker__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.task-maker__input {
+  border: 2px solid #94a3b8;
+  border-radius: 5px;
+  padding: 6px;
+  height: 32px;
+}
+
+.task-maker__input:focus {
+  border: 2px solid #a855f7;
+}
+.add__btn {
+  border: 2px solid #a855f7;
+  border-radius: 5px;
+  background-color: inherit;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрирование иконки */
+  padding: 0;
+  cursor: pointer; /* Указатель мыши */
+  transition: all 0.1s ease-in;
+}
+
+.add__btn:active {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.1);
+  background-color: #e0e7ff;
+}
+
+.add__icon {
+}
+
+.tasks__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  max-width: 503px;
+}
+
+.task {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 2px solid #a855f7;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #a855f7;
+  font-weight: 600;
+}
+
+.task:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+.task__text {
+  font-size: 14px;
+  margin-left: 4px;
+  position: relative;
+}
+
+.delete__btn {
+  cursor: pointer;
+  padding: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  color: currentColor;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete__btn:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.1);
+}

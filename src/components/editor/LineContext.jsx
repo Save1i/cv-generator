@@ -4,7 +4,7 @@ export const LineContext = createContext(null);
 export const LineDispatchContext = createContext(null);
 
 export function NameProvider({ children }) {
-  const [name, dispatch] = useReducer(nameReducer, "");
+  const [name, dispatch] = useReducer(nameReducer, []);
 
   return (
     <LineContext.Provider value={name}>
@@ -16,6 +16,9 @@ export function NameProvider({ children }) {
 function nameReducer(state, action) {
   switch (action.type) {
     case "added": {
+      return [...state, { id: action.id, ...action.payload }];
+    }
+    case "updated": {
       return { ...state, ...action.payload };
     }
     default: {

@@ -1,21 +1,21 @@
 import { useContext, useState } from "react";
-import { LineDispatcManyContexts } from "./LineManyContexts.jsx";
+import { LineDispatcManyContextsWork } from "./LineManyContextsWork.jsx";
 import { Label } from "./Label.jsx";
-import { EditEducation } from "../preview/EditEducation.jsx";
+import { EditWork } from "./EditWork.jsx";
 import styles from "../editor_styles/Basicinfo.module.css";
 import { v4 as uuidv4 } from "uuid";
 
-export const Educationperiod = () => {
+export const WorkExperience = () => {
   const [titleColor, setTitleColor] = useState("#000");
   const [focusedInput, setFocusedInput] = useState(null); // Добавлено для отслеживания фокуса
-  const dispatch = useContext(LineDispatcManyContexts);
+  const dispatch = useContext(LineDispatcManyContextsWork);
 
   const [formValues, setFormValues] = useState({
-    university: "",
-    program: "",
+    Title: "",
+    Company: "",
     startingY: "",
-    graduatingY: "",
-    GPA: "",
+    endY: "",
+    jobRespons: "",
   });
 
   const [editingId, setEditingId] = useState(null);
@@ -57,11 +57,11 @@ export const Educationperiod = () => {
     }
 
     setFormValues({
-      university: "",
-      program: "",
+      Title: "",
+      Company: "",
       startingY: "",
-      graduatingY: "",
-      GPA: "",
+      endY: "",
+      jobRespons: "",
     });
   };
 
@@ -74,34 +74,34 @@ export const Educationperiod = () => {
       }}
     >
       <h2 className={styles.form__title} style={{ color: titleColor, borderColor: titleColor }}>
-        Education Background
+        Work Experience
       </h2>
-      <EditEducation onEdit={startEdit} />
+      <EditWork onEdit={startEdit} />
       <fieldset className={styles.form__fieldset}>
         <Label
-          labelName="University/Institution/Organization:"
-          name="university"
+          labelName="Title/Position:"
+          name="Title"
           type="text"
           placeholder="University of London"
-          value={formValues.university}
+          value={formValues.Title}
           changeText={handleChange}
-          onFocus={() => handleFocus("university")}
+          onFocus={() => handleFocus("Title")}
           onBlur={handleBlur}
           labelStyle={{
-            borderColor: focusedInput === "university" ? titleColor : "#94a3b8",
+            borderColor: focusedInput === "Title" ? titleColor : "#94a3b8",
           }}
         />
         <Label
-          labelName="Program/Degree/Course:"
-          name="program"
+          labelName="Workplace/Company/Organization:"
+          name="Company"
           type="text"
           placeholder="Ph.D in Philosophy"
-          value={formValues.program}
+          value={formValues.Company}
           changeText={handleChange}
-          onFocus={() => handleFocus("program")}
+          onFocus={() => handleFocus("Company")}
           onBlur={handleBlur}
           labelStyle={{
-            borderColor: focusedInput === "program" ? titleColor : "#94a3b8",
+            borderColor: focusedInput === "Company" ? titleColor : "#94a3b8",
           }}
         />
         <Label
@@ -120,32 +120,30 @@ export const Educationperiod = () => {
           }}
         />
         <Label
-          labelName="Graduating Year:"
-          name="graduatingY"
+          labelName="End Year:"
+          name="endY"
           type="month"
           placeholder=""
-          value={formValues.graduatingY}
+          value={formValues.endY}
           changeText={handleChange}
-          onFocus={() => handleFocus("graduatingY")}
+          onFocus={() => handleFocus("endY")}
           onBlur={handleBlur}
           min="1900-01"
           labelStyle={{
-            borderColor: focusedInput === "graduatingY" ? titleColor : "#94a3b8",
+            borderColor: focusedInput === "endY" ? titleColor : "#94a3b8",
           }}
         />
         <Label
-          labelName="GPA (optional):"
-          name="GPA"
-          type="number"
-          placeholder="9,2"
-          value={formValues.GPA}
+          labelName="List your job responsibilities"
+          name="jobRespons"
+          type="text"
+          placeholder=""
+          value={formValues.jobRespons}
           changeText={handleChange}
-          onFocus={() => handleFocus("GPA")}
+          onFocus={() => handleFocus("jobRespons")}
           onBlur={handleBlur}
-          max="10"
-          min="1"
           labelStyle={{
-            borderColor: focusedInput === "GPA" ? titleColor : "#94a3b8",
+            borderColor: focusedInput === "jobRespons" ? titleColor : "#94a3b8",
           }}
         />
       </fieldset>

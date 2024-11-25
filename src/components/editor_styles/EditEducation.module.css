@@ -1,0 +1,87 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Daydream", sans-serif;
+}
+
+.edit-education {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #a855f7;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: #a855f7;
+  transition: all 0.1s ease-in-out;
+}
+
+.edit-education__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.edit-education:hover {
+  background-color: #a855f7;
+  color: white;
+}
+.edit-education__button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-education__button-edit {
+  cursor: pointer;
+  padding: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  color: currentColor;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-education__button-delete {
+  cursor: pointer;
+  padding: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  color: currentColor;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete__icon {
+  transform: scale(1.5);
+  padding-left: 1px;
+}
+
+.edit__icon {
+  transform: scale(1.5);
+}
+
+.edit-education__button-edit:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.1);
+  border: 1px solid currentColor;
+}
+
+.edit-education__button-delete:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.1);
+  border: 1px solid currentColor;
+}

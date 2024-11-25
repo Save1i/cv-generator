@@ -1,12 +1,50 @@
+.preview__title {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 3px;
+  font-size: 16px;
+}
+
 .preview__inner {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.preview__inner::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 3px solid rgba(128, 128, 128, 0.5);
+  border-radius: 50%;
+  background-color: #fff;
+  left: 0;
+  margin-top: 4px;
+}
+
+.preview__main-text {
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .preview__university {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .preview__program {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.preview__gpa {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.preview__year {
+  font-style: italic;
+  font-size: 12px;
 }

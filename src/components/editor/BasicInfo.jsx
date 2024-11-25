@@ -7,6 +7,7 @@ import styles from "../editor_styles/Basicinfo.module.css";
 export const BasicInfo = () => {
   const [titleColor, setTitleColor] = useState("#000");
   const dispatch = useContext(LineDispatchContext);
+  const [focusedInput, setFocusedInput] = useState(null); // Добавлено для отслеживания фокуса
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
@@ -19,21 +20,24 @@ export const BasicInfo = () => {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const handleFocus = () => {
+  const handleFocus = (inputName) => {
     setTitleColor("#a855f7");
+    setFocusedInput(inputName); // Устанавливаем имя фокусированного input
   };
 
   const handleBlur = () => {
     setTitleColor("#000");
+    setFocusedInput(null); // Сбрасываем фокус
   };
 
   const handleSave = (e) => {
     e.preventDefault();
+
     dispatch({
-      type: "added",
+      type: "updated",
       payload: {
-        Fname: formValues.firstName,
-        Lname: formValues.lastName,
+        firstName: formValues.firstName,
+        lastName: formValues.lastName,
         Ptitle: formValues.Ptitle,
         Ysummary: formValues.Ysummary,
       },
@@ -52,8 +56,11 @@ export const BasicInfo = () => {
           type="text"
           placeholder="First name"
           changeText={handleChange}
-          onFocus={handleFocus}
+          onFocus={() => handleFocus("firstName")}
           onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "firstName" ? titleColor : "#94a3b8",
+          }}
         />
         <Label
           labelName="Last name:"
@@ -61,8 +68,11 @@ export const BasicInfo = () => {
           type="text"
           placeholder="Last name"
           changeText={handleChange}
-          onFocus={handleFocus}
+          onFocus={() => handleFocus("lastName")}
           onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "lastName" ? titleColor : "#94a3b8",
+          }}
         />
         <Label
           labelName="Professional title:"
@@ -70,20 +80,27 @@ export const BasicInfo = () => {
           type="text"
           placeholder="Professional title"
           changeText={handleChange}
-          onFocus={handleFocus}
+          onFocus={() => handleFocus("Ptitle")}
           onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "Ptitle" ? titleColor : "#94a3b8",
+          }}
         />
         <Textarea
           labelName="Give a summary about yourself:"
           name="Ysummary"
           type="text"
+          placeholder="Write a brief summary about yourself..."
           changeText={handleChange}
-          onFocus={handleFocus}
+          onFocus={() => handleFocus("Ysummary")}
           onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "Ysummary" ? titleColor : "#94a3b8",
+          }}
         />
       </fieldset>
       <button className={styles.label__btn} onClick={handleSave}>
-        Save
+        save
       </button>
     </form>
   );

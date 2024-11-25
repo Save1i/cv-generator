@@ -1,0 +1,41 @@
+.preview-area__education-period {
+}
+
+.preview__title {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 3px;
+  font-size: 16px;
+}
+
+.preview__inner {
+}
+
+.preview__category {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.preview__tasks {
+  margin-bottom: 12px;
+}
+
+.preview__task {
+  position: relative;
+  padding-left: 6px;
+}
+
+.preview__task::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0006;
+  right: 100%;
+  margin-top: 5px;
+}
+
+.task__text {
+  font-size: 12px;
+}

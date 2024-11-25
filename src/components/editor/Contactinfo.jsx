@@ -5,6 +5,8 @@ import styles from "../editor_styles/Basicinfo.module.css";
 
 export const Contactinfo = () => {
   const dispatch = useContext(LineDispatchContext);
+  const [titleColor, setTitleColor] = useState("#000");
+  const [focusedInput, setFocusedInput] = useState(null); // Добавлено для отслеживания фокуса
   const [formValues, setFormValues] = useState({
     email: "",
     phone: "",
@@ -21,10 +23,20 @@ export const Contactinfo = () => {
     }));
   };
 
+  const handleFocus = (inputName) => {
+    setTitleColor("#a855f7");
+    setFocusedInput(inputName); // Устанавливаем имя фокусированного input
+  };
+
+  const handleBlur = () => {
+    setTitleColor("#000");
+    setFocusedInput(null); // Сбрасываем фокус
+  };
+
   const handleSave = (e) => {
     e.preventDefault();
     dispatch({
-      type: "added",
+      type: "updated",
       payload: {
         email: formValues.email,
         phone: formValues.phone,
@@ -36,7 +48,9 @@ export const Contactinfo = () => {
 
   return (
     <form className={styles["form__basic-info"]}>
-      <h2 className={styles.form__title}>Contact Info</h2>
+      <h2 className={styles.form__title} style={{ color: titleColor, borderColor: titleColor }}>
+        Contact Info
+      </h2>
       <fieldset className={styles.form__fieldset}>
         <Label
           labelName="Email:"
@@ -44,6 +58,11 @@ export const Contactinfo = () => {
           type="email"
           placeholder="richard@gmail.com"
           changeText={handleChange}
+          onFocus={() => handleFocus("email")}
+          onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "email" ? titleColor : "#94a3b8",
+          }}
         />
         <Label
           labelName="Phone number:"
@@ -51,6 +70,11 @@ export const Contactinfo = () => {
           type="tel"
           placeholder="+**********"
           changeText={handleChange}
+          onFocus={() => handleFocus("phone")}
+          onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "phone" ? titleColor : "#94a3b8",
+          }}
         />
         <Label
           labelName="Location:"
@@ -58,6 +82,11 @@ export const Contactinfo = () => {
           type="text"
           placeholder="London"
           changeText={handleChange}
+          onFocus={() => handleFocus("location")}
+          onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "location" ? titleColor : "#94a3b8",
+          }}
         />
         <Label
           labelName="Website:"
@@ -65,6 +94,11 @@ export const Contactinfo = () => {
           type="url"
           placeholder=""
           changeText={handleChange}
+          onFocus={() => handleFocus("university")}
+          onBlur={handleBlur}
+          labelStyle={{
+            borderColor: focusedInput === "university" ? titleColor : "#94a3b8",
+          }}
         />
       </fieldset>
       <button className={styles.label__btn} onClick={handleSave}>

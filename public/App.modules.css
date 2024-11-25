@@ -4,3 +4,16 @@
   width: 100vw;
   max-width: 100%;
 }
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Daydream", sans-serif;
+}

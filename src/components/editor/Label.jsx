@@ -5,26 +5,33 @@ export const Label = ({
   labelName,
   name,
   type,
+  value,
   placeholder,
   changeText,
   onFocus,
   onBlur,
   min,
   max,
+  isRequired,
+  labelStyle,
+  inputStyle,
 }) => {
   return (
-    <label className={styles["form-label"]}>
+    <label className={styles["form-label"]} style={labelStyle}>
       <span className={styles["form-label__title"]}>{labelName}</span>
       <input
         type={type}
         className={styles["form-input"]}
         name={name}
+        value={value}
         placeholder={placeholder}
+        required={isRequired}
         onChange={changeText}
         onFocus={onFocus}
         onBlur={onBlur}
         min={min}
         max={max}
+        style={inputStyle}
       />
     </label>
   );
@@ -36,6 +43,9 @@ Label.propTypes = {
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   changeText: PropTypes.func.isRequired,
-  onFocus: PropTypes.func, // Указываем тип
-  onBlur: PropTypes.func, // Указываем тип
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  isRequired: PropTypes.bool,
+  labelStyle: PropTypes.object, // Добавлено для стилей label
+  inputStyle: PropTypes.object, // Добавлено для стилей input
 };
