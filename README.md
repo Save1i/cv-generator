@@ -1,3 +1,3 @@
-# Getting Started with Create React App
+# cv-generator on react
 
-[Opwn cv-generator](https://lambent-beignet-361e61.netlify.app).
+[Open cv-generator](https://lambent-beignet-361e61.netlify.app).
