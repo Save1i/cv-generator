@@ -15,21 +15,6 @@ export const TechnicalSkills = () => {
     );
   }
 
-  // const tasks = [
-  //   {
-  //     Category: "IT",
-  //     id: "234rqawf",
-  //     tasks: [{ id: "gdfstawrf432", text: "HTML" }],
-  //   },
-  //   {
-  //     Category: "IT",
-  //     id: "234rqawf",
-  //     tasks: [
-  //       { id: "gdfstawrf432", text: "HTML" },
-  //       { id: "gdfawrf432", text: "JS" },
-  //     ],
-  //   },
-  // ];
   console.log(skills);
 
   return (
