@@ -1,9 +1,14 @@
+body {
+  position: relative;
+}
+
 .preview {
   width: 100%;
   background-color: #e6e6e6;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .prebiew__inner {
@@ -16,4 +21,30 @@
   height: 862.5px;
   width: 600px;
   padding: 15px;
+}
+
+.print {
+  position: fixed;
+  content: "";
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  height: 90px;
+  width: 90px;
+  background-color: #a855f7;
+  color: #f2f5ff;
+  border: none;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.print__logo {
+  height: 50px;
+  width: 50px;
+}
+
+.print:hover {
+  opacity: 1;
 }

@@ -13,7 +13,7 @@ export const BasicInfo = () => {
     lastName: "",
     Ptitle: "",
     Ysummary: "",
-  });
+  }); //можно заменить на useReducer
 
   const handleChange = (e) => {
     const { name, value } = e.target;
